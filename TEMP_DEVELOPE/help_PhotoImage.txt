@@ -1,0 +1,79 @@
+class PhotoImage(Image)
+ |  Widget which can display colored images in GIF, PPM/PGM format.
+ |
+ |  Method resolution order:
+ |      PhotoImage
+ |      Image
+ |      builtins.object
+ |
+ |  Methods defined here:
+ |
+ |  __getitem__(self, key)
+ |      # XXX config
+ |
+ |  __init__(self, name=None, cnf={}, master=None, **kw)
+ |      Create an image with NAME.
+ |
+ |      Valid resource names: data, format, file, gamma, height, palette,
+ |      width.
+ |
+ |  blank(self)
+ |      Display a transparent image.
+ |
+ |  cget(self, option)
+ |      Return the value of OPTION.
+ |
+ |  copy(self)
+ |      Return a new PhotoImage with the same image as this widget.
+ |
+ |  get(self, x, y)
+ |      Return the color (red, green, blue) of the pixel at X,Y.
+ |
+ |  put(self, data, to=None)
+ |      Put row formatted colors to image starting from
+ |      position TO, e.g. image.put("{red green} {blue yellow}", to=(4,6))
+ |
+ |  subsample(self, x, y='')
+ |      Return a new PhotoImage based on the same image as this widget
+ |      but use only every Xth or Yth pixel.
+ |
+ |  write(self, filename, format=None, from_coords=None)
+ |      Write image to file FILENAME in FORMAT starting from
+ |      position FROM_COORDS.
+ |
+ |  zoom(self, x, y='')
+ |      Return a new PhotoImage with the same image as this widget
+ |      but zoom it with X and Y.
+ |
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from Image:
+ |
+ |  __del__(self)
+ |
+ |  __setitem__(self, key, value)
+ |
+ |  __str__(self)
+ |
+ |  config = configure(self, **kw)
+ |      Configure the image.
+ |
+ |  configure(self, **kw)
+ |      Configure the image.
+ |
+ |  height(self)
+ |      Return the height of the image.
+ |
+ |  type(self)
+ |      Return the type of the imgage, e.g. "photo" or "bitmap".
+ |
+ |  width(self)
+ |      Return the width of the image.
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from Image:
+ |
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |
+ |  __weakref__
+ |      list of weak references to the object (if defined)

@@ -1,0 +1,256 @@
+Help on class Wm in module tkinter:
+
+class Wm(builtins.object)
+ |  Provides functions for the communication with the window manager.
+ |
+ |  Methods defined here:
+ |
+ |  aspect = wm_aspect(self, minNumer=None, minDenom=None, maxNumer=None, maxDen
+om=None)
+ |
+ |  attributes = wm_attributes(self, *args)
+ |
+ |  client = wm_client(self, name=None)
+ |
+ |  colormapwindows = wm_colormapwindows(self, *wlist)
+ |
+ |  command = wm_command(self, value=None)
+ |
+ |  deiconify = wm_deiconify(self)
+ |
+ |  focusmodel = wm_focusmodel(self, model=None)
+ |
+ |  forget = wm_forget(self, window)
+ |
+ |  frame = wm_frame(self)
+ |
+ |  geometry = wm_geometry(self, newGeometry=None)
+ |
+ |  grid = wm_grid(self, baseWidth=None, baseHeight=None, widthInc=None, heightI
+nc=None)
+ |
+ |  group = wm_group(self, pathName=None)
+ |
+ |  iconbitmap = wm_iconbitmap(self, bitmap=None, default=None)
+ |
+ |  iconify = wm_iconify(self)
+ |
+ |  iconmask = wm_iconmask(self, bitmap=None)
+ |
+ |  iconname = wm_iconname(self, newName=None)
+ |
+ |  iconphoto = wm_iconphoto(self, default=False, *args)
+ |
+ |  iconposition = wm_iconposition(self, x=None, y=None)
+ |
+ |  iconwindow = wm_iconwindow(self, pathName=None)
+ |
+ |  manage = wm_manage(self, widget)
+ |
+ |  maxsize = wm_maxsize(self, width=None, height=None)
+ |
+ |  minsize = wm_minsize(self, width=None, height=None)
+ |
+ |  overrideredirect = wm_overrideredirect(self, boolean=None)
+ |
+ |  positionfrom = wm_positionfrom(self, who=None)
+ |
+ |  protocol = wm_protocol(self, name=None, func=None)
+ |
+ |  resizable = wm_resizable(self, width=None, height=None)
+ |
+ |  sizefrom = wm_sizefrom(self, who=None)
+ |
+ |  state = wm_state(self, newstate=None)
+ |
+ |  title = wm_title(self, string=None)
+ |
+ |  transient = wm_transient(self, master=None)
+ |
+ |  withdraw = wm_withdraw(self)
+ |
+ |  wm_aspect(self, minNumer=None, minDenom=None, maxNumer=None, maxDenom=None)
+ |      Instruct the window manager to set the aspect ratio (width/height)
+ |      of this widget to be between MINNUMER/MINDENOM and MAXNUMER/MAXDENOM. Re
+turn a tuple
+ |      of the actual values if no argument is given.
+ |
+ |  wm_attributes(self, *args)
+ |      This subcommand returns or sets platform specific attributes
+ |
+ |      The first form returns a list of the platform specific flags and
+ |      their values. The second form returns the value for the specific
+ |      option. The third form sets one or more of the values. The values
+ |      are as follows:
+ |
+ |      On Windows, -disabled gets or sets whether the window is in a
+ |      disabled state. -toolwindow gets or sets the style of the window
+ |      to toolwindow (as defined in the MSDN). -topmost gets or sets
+ |      whether this is a topmost window (displays above all other
+ |      windows).
+ |
+ |      On Macintosh, XXXXX
+ |
+ |      On Unix, there are currently no special attribute values.
+ |
+ |  wm_client(self, name=None)
+ |      Store NAME in WM_CLIENT_MACHINE property of this widget. Return
+ |      current value.
+ |
+ |  wm_colormapwindows(self, *wlist)
+ |      Store list of window names (WLIST) into WM_COLORMAPWINDOWS property
+ |      of this widget. This list contains windows whose colormaps differ from t
+heir
+ |      parents. Return current list of widgets if WLIST is empty.
+ |
+ |  wm_command(self, value=None)
+ |      Store VALUE in WM_COMMAND property. It is the command
+ |      which shall be used to invoke the application. Return current
+ |      command if VALUE is None.
+ |
+ |  wm_deiconify(self)
+ |      Deiconify this widget. If it was never mapped it will not be mapped.
+ |      On Windows it will raise this widget and give it the focus.
+ |
+ |  wm_focusmodel(self, model=None)
+ |      Set focus model to MODEL. "active" means that this widget will claim
+ |      the focus itself, "passive" means that the window manager shall give
+ |      the focus. Return current focus model if MODEL is None.
+ |
+ |  wm_forget(self, window)
+ |      The window will be unmappend from the screen and will no longer
+ |      be managed by wm. toplevel windows will be treated like frame
+ |      windows once they are no longer managed by wm, however, the menu
+ |      option configuration will be remembered and the menus will return
+ |      once the widget is managed again.
+ |
+ |  wm_frame(self)
+ |      Return identifier for decorative frame of this widget if present.
+ |
+ |  wm_geometry(self, newGeometry=None)
+ |      Set geometry to NEWGEOMETRY of the form =widthxheight+x+y. Return
+ |      current value if None is given.
+ |
+ |  wm_grid(self, baseWidth=None, baseHeight=None, widthInc=None, heightInc=None
+)
+ |      Instruct the window manager that this widget shall only be
+ |      resized on grid boundaries. WIDTHINC and HEIGHTINC are the width and
+ |      height of a grid unit in pixels. BASEWIDTH and BASEHEIGHT are the
+ |      number of grid units requested in Tk_GeometryRequest.
+ |
+ |  wm_group(self, pathName=None)
+ |      Set the group leader widgets for related widgets to PATHNAME. Return
+ |      the group leader of this widget if None is given.
+ |
+ |  wm_iconbitmap(self, bitmap=None, default=None)
+ |      Set bitmap for the iconified widget to BITMAP. Return
+ |      the bitmap if None is given.
+ |
+ |      Under Windows, the DEFAULT parameter can be used to set the icon
+ |      for the widget and any descendents that don't have an icon set
+ |      explicitly.  DEFAULT can be the relative path to a .ico file
+ |      (example: root.iconbitmap(default='myicon.ico') ).  See Tk
+ |      documentation for more information.
+ |
+ |  wm_iconify(self)
+ |      Display widget as icon.
+ |
+ |  wm_iconmask(self, bitmap=None)
+ |      Set mask for the icon bitmap of this widget. Return the
+ |      mask if None is given.
+ |
+ |  wm_iconname(self, newName=None)
+ |      Set the name of the icon for this widget. Return the name if
+ |      None is given.
+ |
+ |  wm_iconphoto(self, default=False, *args)
+ |      Sets the titlebar icon for this window based on the named photo
+ |      images passed through args. If default is True, this is applied to
+ |      all future created toplevels as well.
+ |
+ |      The data in the images is taken as a snapshot at the time of
+ |      invocation. If the images are later changed, this is not reflected
+ |      to the titlebar icons. Multiple images are accepted to allow
+ |      different images sizes to be provided. The window manager may scale
+ |      provided icons to an appropriate size.
+ |
+ |      On Windows, the images are packed into a Windows icon structure.
+ |      This will override an icon specified to wm_iconbitmap, and vice
+ |      versa.
+ |
+ |      On X, the images are arranged into the _NET_WM_ICON X property,
+ |      which most modern window managers support. An icon specified by
+ |      wm_iconbitmap may exist simuultaneously.
+ |
+ |      On Macintosh, this currently does nothing.
+ |
+ |  wm_iconposition(self, x=None, y=None)
+ |      Set the position of the icon of this widget to X and Y. Return
+ |      a tuple of the current values of X and X if None is given.
+ |
+ |  wm_iconwindow(self, pathName=None)
+ |      Set widget PATHNAME to be displayed instead of icon. Return the current
+ |      value if None is given.
+ |
+ |  wm_manage(self, widget)
+ |      The widget specified will become a stand alone top-level window.
+ |      The window will be decorated with the window managers title bar,
+ |      etc.
+ |
+ |  wm_maxsize(self, width=None, height=None)
+ |      Set max WIDTH and HEIGHT for this widget. If the window is gridded
+ |      the values are given in grid units. Return the current values if None
+ |      is given.
+ |
+ |  wm_minsize(self, width=None, height=None)
+ |      Set min WIDTH and HEIGHT for this widget. If the window is gridded
+ |      the values are given in grid units. Return the current values if None
+ |      is given.
+ |
+ |  wm_overrideredirect(self, boolean=None)
+ |      Instruct the window manager to ignore this widget
+ |      if BOOLEAN is given with 1. Return the current value if None
+ |      is given.
+ |
+ |  wm_positionfrom(self, who=None)
+ |      Instruct the window manager that the position of this widget shall
+ |      be defined by the user if WHO is "user", and by its own policy if WHO is
+ |      "program".
+ |
+ |  wm_protocol(self, name=None, func=None)
+ |      Bind function FUNC to command NAME for this widget.
+ |      Return the function bound to NAME if None is given. NAME could be
+ |      e.g. "WM_SAVE_YOURSELF" or "WM_DELETE_WINDOW".
+ |
+ |  wm_resizable(self, width=None, height=None)
+ |      Instruct the window manager whether this width can be resized
+ |      in WIDTH or HEIGHT. Both values are boolean values.
+ |
+ |  wm_sizefrom(self, who=None)
+ |      Instruct the window manager that the size of this widget shall
+ |      be defined by the user if WHO is "user", and by its own policy if WHO is
+ |      "program".
+ |
+ |  wm_state(self, newstate=None)
+ |      Query or set the state of this widget as one of normal, icon,
+ |      iconic (see wm_iconwindow), withdrawn, or zoomed (Windows only).
+ |
+ |  wm_title(self, string=None)
+ |      Set the title of this widget.
+ |
+ |  wm_transient(self, master=None)
+ |      Instruct the window manager that this widget is transient
+ |      with regard to widget MASTER.
+ |
+ |  wm_withdraw(self)
+ |      Withdraw this widget from the screen such that it is unmapped
+ |      and forgotten by the window manager. Re-draw it with wm_deiconify.
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |
+ |  __weakref__
+ |      list of weak references to the object (if defined)

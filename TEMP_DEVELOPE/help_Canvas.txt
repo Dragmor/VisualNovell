@@ -1,0 +1,235 @@
+class Canvas(Widget, XView, YView)
+ |  Canvas widget to display graphical elements like lines or text.
+ |
+ |  Method resolution order:
+ |      Canvas
+ |      Widget
+ |      BaseWidget
+ |      Misc
+ |      Pack
+ |      Place
+ |      Grid
+ |      XView
+ |      YView
+ |      builtins.object
+ |
+ |  Methods defined here:
+ |
+ |  __init__(self, master=None, cnf={}, **kw)
+ |      Construct a canvas widget with the parent MASTER.
+ |
+ |      Valid resource names: background, bd, bg, borderwidth, closeenough,
+ |      confine, cursor, height, highlightbackground, highlightcolor,
+ |      highlightthickness, insertbackground, insertborderwidth,
+ |      insertofftime, insertontime, insertwidth, offset, relief,
+ |      scrollregion, selectbackground, selectborderwidth, selectforeground,
+ |      state, takefocus, width, xscrollcommand, xscrollincrement,
+ |      yscrollcommand, yscrollincrement.
+ |
+ |  addtag(self, *args)
+ |      Internal function.
+ |
+ |  addtag_above(self, newtag, tagOrId)
+ |      Add tag NEWTAG to all items above TAGORID.
+ |
+ |  addtag_all(self, newtag)
+ |      Add tag NEWTAG to all items.
+ |
+ |  addtag_below(self, newtag, tagOrId)
+ |      Add tag NEWTAG to all items below TAGORID.
+ |
+ |  addtag_closest(self, newtag, x, y, halo=None, start=None)
+ |      Add tag NEWTAG to item which is closest to pixel at X, Y.
+ |      If several match take the top-most.
+ |      All items closer than HALO are considered overlapping (all are
+ |      closests). If START is specified the next below this tag is taken.
+ |
+ |  addtag_enclosed(self, newtag, x1, y1, x2, y2)
+ |      Add tag NEWTAG to all items in the rectangle defined
+ |      by X1,Y1,X2,Y2.
+ |
+ |  addtag_overlapping(self, newtag, x1, y1, x2, y2)
+ |      Add tag NEWTAG to all items which overlap the rectangle
+ |      defined by X1,Y1,X2,Y2.
+ |
+ |  addtag_withtag(self, newtag, tagOrId)
+ |      Add tag NEWTAG to all items with TAGORID.
+ |
+ |  bbox(self, *args)
+ |      Return a tuple of X1,Y1,X2,Y2 coordinates for a rectangle
+ |      which encloses all items with tags specified as arguments.
+ |
+ |  canvasx(self, screenx, gridspacing=None)
+ |      Return the canvas x coordinate of pixel position SCREENX rounded
+ |      to nearest multiple of GRIDSPACING units.
+ |
+ |  canvasy(self, screeny, gridspacing=None)
+ |      Return the canvas y coordinate of pixel position SCREENY rounded
+ |      to nearest multiple of GRIDSPACING units.
+ |
+ |  coords(self, *args)
+ |      Return a list of coordinates for the item given in ARGS.
+ |
+ |  create_arc(self, *args, **kw)
+ |      Create arc shaped region with coordinates x1,y1,x2,y2.
+ |
+ |  create_bitmap(self, *args, **kw)
+ |      Create bitmap with coordinates x1,y1.
+ |
+ |  create_image(self, *args, **kw)
+ |      Create image item with coordinates x1,y1.
+ |
+ |  create_line(self, *args, **kw)
+ |      Create line with coordinates x1,y1,...,xn,yn.
+ |
+ |  create_oval(self, *args, **kw)
+ |      Create oval with coordinates x1,y1,x2,y2.
+ |
+ |  create_polygon(self, *args, **kw)
+ |      Create polygon with coordinates x1,y1,...,xn,yn.
+ |
+ |  create_rectangle(self, *args, **kw)
+ |      Create rectangle with coordinates x1,y1,x2,y2.
+ |
+ |  create_text(self, *args, **kw)
+ |      Create text with coordinates x1,y1.
+ |
+ |  create_window(self, *args, **kw)
+ |      Create window with coordinates x1,y1,x2,y2.
+ |
+ |  dchars(self, *args)
+ |      Delete characters of text items identified by tag or id in ARGS (possibl
+y
+ |      several times) from FIRST to LAST character (including).
+ |
+ |  delete(self, *args)
+ |      Delete items identified by all tag or ids contained in ARGS.
+ |
+ |  dtag(self, *args)
+ |      Delete tag or id given as last arguments in ARGS from items
+ |      identified by first argument in ARGS.
+ |
+ |  find(self, *args)
+ |      Internal function.
+ |
+ |  find_above(self, tagOrId)
+ |      Return items above TAGORID.
+ |
+ |  find_all(self)
+ |      Return all items.
+ |
+ |  find_below(self, tagOrId)
+ |      Return all items below TAGORID.
+ |
+ |  find_closest(self, x, y, halo=None, start=None)
+ |      Return item which is closest to pixel at X, Y.
+ |      If several match take the top-most.
+ |      All items closer than HALO are considered overlapping (all are
+ |      closests). If START is specified the next below this tag is taken.
+ |
+ |  find_enclosed(self, x1, y1, x2, y2)
+ |      Return all items in rectangle defined
+ |      by X1,Y1,X2,Y2.
+ |
+ |  find_overlapping(self, x1, y1, x2, y2)
+ |      Return all items which overlap the rectangle
+ |      defined by X1,Y1,X2,Y2.
+ |
+ |  find_withtag(self, tagOrId)
+ |      Return all items with TAGORID.
+ |
+ |  focus(self, *args)
+ |      Set focus to the first item specified in ARGS.
+ |
+ |  gettags(self, *args)
+ |      Return tags associated with the first item specified in ARGS.
+ |
+ |  icursor(self, *args)
+ |      Set cursor at position POS in the item identified by TAGORID.
+ |      In ARGS TAGORID must be first.
+ |
+ |  index(self, *args)
+ |      Return position of cursor as integer in item specified in ARGS.
+ |
+ |  insert(self, *args)
+ |      Insert TEXT in item TAGORID at position POS. ARGS must
+ |      be TAGORID POS TEXT.
+ |
+ |  itemcget(self, tagOrId, option)
+ |      Return the resource value for an OPTION for item TAGORID.
+ |
+ |  itemconfig = itemconfigure(self, tagOrId, cnf=None, **kw)
+ |
+ |  itemconfigure(self, tagOrId, cnf=None, **kw)
+ |      Configure resources of an item TAGORID.
+ |
+ |      The values for resources are specified as keyword
+ |      arguments. To get an overview about
+ |      the allowed keyword arguments call the method without arguments.
+ |
+ |  lift = tag_raise(self, *args)
+ |
+ |  lower = tag_lower(self, *args)
+ |
+ |  move(self, *args)
+ |      Move an item TAGORID given in ARGS.
+ |
+ |  postscript(self, cnf={}, **kw)
+ |      Print the contents of the canvas to a postscript
+ |      file. Valid options: colormap, colormode, file, fontmap,
+ |      height, pageanchor, pageheight, pagewidth, pagex, pagey,
+ |      rotate, witdh, x, y.
+ |
+ |  scale(self, *args)
+ |      Scale item TAGORID with XORIGIN, YORIGIN, XSCALE, YSCALE.
+ |
+ |  scan_dragto(self, x, y, gain=10)
+ |      Adjust the view of the canvas to GAIN times the
+ |      difference between X and Y and the coordinates given in
+ |      scan_mark.
+ |
+ |  scan_mark(self, x, y)
+ |      Remember the current X, Y coordinates.
+ |
+ |  select_adjust(self, tagOrId, index)
+ |      Adjust the end of the selection near the cursor of an item TAGORID to in
+dex.
+ |
+ |  select_clear(self)
+ |      Clear the selection if it is in this widget.
+ |
+ |  select_from(self, tagOrId, index)
+ |      Set the fixed end of a selection in item TAGORID to INDEX.
+ |
+ |  select_item(self)
+ |      Return the item which has the selection.
+ |
+ |  select_to(self, tagOrId, index)
+ |      Set the variable end of a selection in item TAGORID to INDEX.
+ |
+ |  tag_bind(self, tagOrId, sequence=None, func=None, add=None)
+ |      Bind to all items with TAGORID at event SEQUENCE a call to function FUNC
+.
+ |
+ |      An additional boolean parameter ADD specifies whether FUNC will be
+ |      called additionally to the other bound function or whether it will
+ |      replace the previous function. See bind for the return value.
+ |
+ |  tag_lower(self, *args)
+ |      Lower an item TAGORID given in ARGS
+ |      (optional below another item).
+ |
+ |  tag_raise(self, *args)
+ |      Raise an item TAGORID given in ARGS
+ |      (optional above another item).
+ |
+ |  tag_unbind(self, tagOrId, sequence, funcid=None)
+ |      Unbind for all items with TAGORID for event SEQUENCE  the
+ |      function identified with FUNCID.
+ |
+ |  tkraise = tag_raise(self, *args)
+ |
+ |  type(self, tagOrId)
+ |      Return the type of the item TAGORID.
+ |
+ 
